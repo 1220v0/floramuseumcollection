@@ -1369,8 +1369,8 @@
                     if (dp) dp.style.opacity = '0';
                     var cap = document.querySelector('.photo-caption-bar');
                     if (cap) cap.style.opacity = '1';
-                    if (ghost._shift) { ghost.style.transform = ghost.style.transform.replace(' translateX(-'+ghost._shift+'px)',''); ghost._shift = null; }
-                    return;
+                    if (ghost._origTransform) { ghost.style.transform = ghost._origTransform; ghost._origTransform = null; ghost._shift = null; }
+                    collapse();
                 }
                 collapse();
             });
